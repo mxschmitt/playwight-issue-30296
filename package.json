@@ -1,13 +1,15 @@
 {
   "name": "1510",
   "version": "1.0.0",
-  "description": "",
+  "description": "BUG#30296",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test"
+  },
   "keywords": [],
-  "author": "",
+  "author": "Fernando Garcia",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "1.42.1"
+    "@playwright/test": "1.43.0"
   }
 }
