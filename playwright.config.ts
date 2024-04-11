@@ -1,4 +1,4 @@
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig } from '@playwright/test';
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -8,27 +8,27 @@ export default defineConfig({
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
-  forbidOnly: !!process.env.CI,
+  // forbidOnly: !!process.env.CI,
   /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
+  // retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  // workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: 'list',
   projects: [
     {
-      name: 'project1',
+      name: 'login project',
       testMatch: /project1/
     },
 
     {
-      name: 'project2',
-      dependencies: ['project1'],
+      name: 'e2e auth project',
+      dependencies: ['login project'],
       testMatch: /project2/
     },
 
     {
-      name: 'project3',
+      name: 'e2e non-auth project',
       testMatch: /project3/
     },
   ],
